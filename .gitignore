@@ -112,6 +112,3 @@ dist
 
 #local models
 ./model
-
-#index
-index.ts
