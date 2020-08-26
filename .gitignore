@@ -102,3 +102,16 @@ dist
 
 # TernJS port file
 .tern-port
+
+# vscode configs
+.vscode/*
+
+# DS_STORE files are used by the Macintosh OSX operating system.
+.DS_Store
+*/.DS_Store
+
+#local models
+./model
+
+#index
+index.ts
