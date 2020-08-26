@@ -1,7 +1,6 @@
 {
   "name": "rtmodel",
   "version": "1.0.0",
-  "description": "Models for RTWord and RTHtml",
   "main": "build/index.js",
   "scripts": {
     "pretest": "npm install --only=dev && node_modules/.bin/eslint --ext .ts ./"
