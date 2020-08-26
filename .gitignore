@@ -109,6 +109,3 @@ dist
 # DS_STORE files are used by the Macintosh OSX operating system.
 .DS_Store
 */.DS_Store
-
-#local models
-./model
