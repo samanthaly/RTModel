@@ -3,6 +3,10 @@
  */
 'use strict';
 
+enum ImageSizeType {
+  default = 'default',
+  formula = 'formula'
+}
 interface Image {
   id: string;
   fileName: string;
@@ -23,4 +27,5 @@ export {
   ImageSize,
   ImageWithBase64,
   ImageWithWidthAndHeight,
+  ImageSizeType
 };
