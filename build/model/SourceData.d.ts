@@ -1,4 +1,6 @@
 import { Image } from './Image';
+import { Formula, FormulaInContent, ImageFormula } from './Formula';
+import { TableWithData, TableWithImage, TableInParagraph } from './Table';
 interface NameType {
     chineseName?: string;
     englishName?: string;
@@ -26,6 +28,14 @@ interface Decorate {
     length: number;
     type: Array<DecorateType>;
 }
+interface FootnoteInContent {
+    pos: number;
+    id: string;
+}
+interface Footnote {
+    id: string;
+    text: string;
+}
 interface Paragraph {
     paragraph: string;
     text?: string;
@@ -35,10 +45,7 @@ interface Paragraph {
         type: ReferenceType;
     }>;
     decorates: Array<Decorate>;
-    footnotes: Array<{
-        pos: number;
-        id: string;
-    }>;
+    footnotes: Array<FootnoteInContent>;
     comment?: string;
 }
 interface Quote {
@@ -49,10 +56,7 @@ interface Quote {
         type: ReferenceType;
     }>;
     decorates: Array<Decorate>;
-    footnotes: Array<{
-        pos: number;
-        id: string;
-    }>;
+    footnotes: Array<FootnoteInContent>;
 }
 interface ListItem {
     text: string;
@@ -63,31 +67,11 @@ interface ListItem {
         type: ReferenceType;
     }>;
     decorates: Array<Decorate>;
-    footnotes: Array<{
-        pos: number;
-        id: string;
-    }>;
+    footnotes: Array<FootnoteInContent>;
     formulas?: Array<{
         pos: number;
         id: string;
     }>;
-}
-interface TableContent {
-    header: Array<string>;
-    body: Array<Array<string>>;
-}
-declare enum TableType {
-    simpleTable = "simpleTable",
-    complexTable = "complexTable"
-}
-interface Table {
-    id: string;
-    caption: string;
-    source: string;
-    fileName: string;
-    imgFileName?: string;
-    data?: TableContent;
-    type?: TableType;
 }
 interface Section {
     preParagraphs: Array<Paragraph | {
@@ -98,6 +82,12 @@ interface Section {
         comment?: string;
     } | {
         image: Image;
+        comment?: string;
+    } | {
+        formula: FormulaInContent | ImageFormula;
+        comment?: string;
+    } | {
+        table: TableInParagraph;
         comment?: string;
     }>;
     sections: Partial<Section>[];
@@ -143,6 +133,9 @@ interface SourceData {
     acknowledgement: Array<string>;
     content: Content;
     image: Array<Image>;
+    formula: Array<Formula | ImageFormula>;
+    table: Array<TableWithData | TableWithImage>;
+    footnote: Array<Footnote>;
 }
 export default SourceData;
-export { Content, Section, Decorate, Paragraph, DecorateType, Quote, ListItem, ListType, Table, TableContent, TableType };
+export { Content, Section, Decorate, Paragraph, DecorateType, Quote, ListItem, ListType, Footnote, FootnoteInContent, };

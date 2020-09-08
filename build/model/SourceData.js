@@ -3,7 +3,6 @@
  */
 'use strict';
 exports.__esModule = true;
-exports.TableType = exports.ListType = exports.DecorateType = void 0;
 var DecorateType;
 (function (DecorateType) {
     DecorateType["bold"] = "bold";
@@ -27,9 +26,3 @@ var ListType;
     ListType["ordered"] = "ordered";
 })(ListType || (ListType = {}));
 exports.ListType = ListType;
-var TableType;
-(function (TableType) {
-    TableType["simpleTable"] = "simpleTable";
-    TableType["complexTable"] = "complexTable"; //only have a picture of the table
-})(TableType || (TableType = {}));
-exports.TableType = TableType;

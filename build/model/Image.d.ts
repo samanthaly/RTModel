@@ -1,3 +1,7 @@
+declare enum ImageSizeType {
+    default = "default",
+    formula = "formula"
+}
 interface Image {
     id: string;
     fileName: string;
@@ -13,4 +17,4 @@ interface ImageWithWidthAndHeight extends Image, ImageSize {
 interface ImageWithBase64 extends ImageWithWidthAndHeight {
     base64: string;
 }
-export { Image, ImageSize, ImageWithBase64, ImageWithWidthAndHeight, };
+export { Image, ImageSize, ImageWithBase64, ImageWithWidthAndHeight, ImageSizeType };
