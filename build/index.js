@@ -8,4 +8,4 @@ function __export(m) {
 exports.__esModule = true;
 __export(require("./model/Image"));
 __export(require("./model/SourceData"));
-__export(require("./model/Image"));
+__export(require("./model/Table"));
