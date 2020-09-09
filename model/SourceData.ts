@@ -107,8 +107,8 @@ interface SourceData {
   footnote: Array<Footnote>;
 }
 
-export default SourceData;
 export {
+  SourceData,
   Content,
   Section,
   Decorate,

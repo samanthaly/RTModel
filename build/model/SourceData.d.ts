@@ -137,5 +137,4 @@ interface SourceData {
     table: Array<TableWithData | TableWithImage>;
     footnote: Array<Footnote>;
 }
-export default SourceData;
-export { Content, Section, Decorate, Paragraph, DecorateType, Quote, ListItem, ListType, Footnote, FootnoteInContent, };
+export { SourceData, Content, Section, Decorate, Paragraph, DecorateType, Quote, ListItem, ListType, Footnote, FootnoteInContent, };
