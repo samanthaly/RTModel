@@ -36,36 +36,29 @@ interface Footnote {
     id: string;
     text: string;
 }
+interface ContentReference {
+    pos: number;
+    id: string;
+    type: ReferenceType;
+}
 interface Paragraph {
     paragraph: string;
     text?: string;
-    refs: Array<{
-        pos: number;
-        id: string;
-        type: ReferenceType;
-    }>;
+    refs: Array<ContentReference>;
     decorates: Array<Decorate>;
     footnotes: Array<FootnoteInContent>;
     comment?: string;
 }
 interface Quote {
     text: string;
-    refs: Array<{
-        pos: number;
-        id: string;
-        type: ReferenceType;
-    }>;
+    refs: Array<ContentReference>;
     decorates: Array<Decorate>;
     footnotes: Array<FootnoteInContent>;
 }
 interface ListItem {
     text: string;
     type: ListType;
-    refs: Array<{
-        pos: number;
-        id: string;
-        type: ReferenceType;
-    }>;
+    refs: Array<ContentReference>;
     decorates: Array<Decorate>;
     footnotes: Array<FootnoteInContent>;
     formulas?: Array<{
