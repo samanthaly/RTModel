@@ -20,6 +20,7 @@ var ReferenceType;
     ReferenceType["formula"] = "formula";
     ReferenceType["appendix"] = "appendix";
 })(ReferenceType || (ReferenceType = {}));
+exports.ReferenceType = ReferenceType;
 var ListType;
 (function (ListType) {
     ListType["bullet"] = "bullet";

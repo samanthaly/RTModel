@@ -123,4 +123,6 @@ export {
   ListType,
   Footnote,
   FootnoteInContent,
+  ReferenceType,
+  ContentReference,
 };
