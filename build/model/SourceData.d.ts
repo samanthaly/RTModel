@@ -41,11 +41,13 @@ interface ContentReference {
     id: string;
     type: ReferenceType;
 }
-interface Paragraph {
+interface ParagraphWithDecorates {
     paragraph: string;
+    decorates: Array<Decorate>;
+}
+interface Paragraph extends ParagraphWithDecorates {
     text?: string;
     refs: Array<ContentReference>;
-    decorates: Array<Decorate>;
     footnotes: Array<FootnoteInContent>;
     comment?: string;
 }
@@ -130,4 +132,4 @@ interface SourceData {
     table: Array<TableWithData | TableWithImage>;
     footnote: Array<Footnote>;
 }
-export { SourceData, Content, Section, Decorate, Paragraph, DecorateType, Quote, ListItem, ListType, Footnote, FootnoteInContent, ReferenceType, ContentReference, };
+export { SourceData, Content, Section, Decorate, Paragraph, ParagraphWithDecorates, DecorateType, Quote, ListItem, ListType, Footnote, FootnoteInContent, ReferenceType, ContentReference, };
