@@ -1,6 +1,7 @@
 import { Image } from './Image';
 import { Formula, FormulaInContent, ImageFormula } from './Formula';
 import { TableWithData, TableWithImage, TableInParagraph } from './Table';
+import Reference from './Reference';
 interface NameType {
     chineseName?: string;
     englishName?: string;
@@ -134,7 +135,10 @@ interface SourceDataWithoutReferences {
     table: Array<TableWithData | TableWithImage>;
     footnote: Array<Footnote>;
 }
-interface SourceDataWithProcessedReferences extends SourceDataWithoutReferences {
-    reference: BaseParagraphWithDecorates[];
+interface SourceDataOfOldThesis extends SourceDataWithoutReferences {
+    allReferences: Array<Reference>;
 }
-export { SourceDataWithoutReferences, SourceDataWithProcessedReferences, Content, Section, Decorate, Paragraph, BaseParagraphWithDecorates, DecorateType, Quote, ListItem, ListType, Footnote, FootnoteInContent, ReferenceType, ContentReference, };
+interface SourceDataWithProcessedReferences extends SourceDataWithoutReferences {
+    reference: Array<BaseParagraphWithDecorates>;
+}
+export { SourceDataWithoutReferences, SourceDataOfOldThesis, SourceDataWithProcessedReferences, Content, Section, Decorate, Paragraph, BaseParagraphWithDecorates, DecorateType, Quote, ListItem, ListType, Footnote, FootnoteInContent, ReferenceType, ContentReference, };
