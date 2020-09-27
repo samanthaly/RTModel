@@ -96,7 +96,7 @@ interface Content {
     preParagraphs: Array<Section>;
     chapters: Array<Section>;
 }
-interface SourceData {
+interface SourceDataWithoutReferences {
     title: {
         chineseName?: string;
         englishName?: string;
@@ -134,4 +134,7 @@ interface SourceData {
     table: Array<TableWithData | TableWithImage>;
     footnote: Array<Footnote>;
 }
-export { SourceData, Content, Section, Decorate, Paragraph, BaseParagraphWithDecorates, DecorateType, Quote, ListItem, ListType, Footnote, FootnoteInContent, ReferenceType, ContentReference, };
+interface SourceDataWithProcessedReferences extends SourceDataWithoutReferences {
+    reference: BaseParagraphWithDecorates[];
+}
+export { SourceDataWithoutReferences, SourceDataWithProcessedReferences, Content, Section, Decorate, Paragraph, BaseParagraphWithDecorates, DecorateType, Quote, ListItem, ListType, Footnote, FootnoteInContent, ReferenceType, ContentReference, };
